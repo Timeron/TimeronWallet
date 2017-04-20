@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_name">Wallet</string>
+
+    <string name="save">Zapisz</string>
+    <string name="cancle">Anuluj</string>
+    <string name="amount0">0.00 zł</string>
+    <string name="date0">01-01-2000</string>
+
+    <string name="calculator_value0">0.00</string>
+    <string name="calculator_0">0</string>
+    <string name="calculator_1">1</string>
+    <string name="calculator_2">2</string>
+    <string name="calculator_3">3</string>
+    <string name="calculator_4">4</string>
+    <string name="calculator_5">5</string>
+    <string name="calculator_6">6</string>
+    <string name="calculator_7">7</string>
+    <string name="calculator_8">8</string>
+    <string name="calculator_9">9</string>
+    <string name="calculator_C">C</string>
+    <string name="calculator_CE">CE</string>
+    <string name="calculator_Back"></string>
+    <string name="calculator_Percent">%</string>
+    <string name="calculator_Send"></string>
+    <string name="calculator_break">,</string>
+    <string name="calculator_plus">+</string>
+    <string name="calculator_minus">-</string>
+    <string name="calculator_multiplication">*</string>
+    <string name="calculator_division">/</string>
+    <string name="calculator_sum">=</string>
+
+    <string name="wallet_date">Data</string>
+    <string name="wallet_account">Konto</string>
+    <string name="wallet_amount">Kwota</string>
+    <string name="wallet_type">Typ</string>
+    <string name="wallet_transfer">Transfer</string>
+    <string name="wallet_expenditure">Wydatek</string>
+    <string name="wallet_income">Przychód</string>
+    <string name="wallet_bill">Paragon</string>
+    <string name="wallet_operation">Operacja</string>
+    <string name="wallet_plus">+</string>
+
+    <!--Messages-->
+    <string name="MS_RECORD_ADDED">Rekord pomyślnie dodany</string>
+    <string name="MS_NO_AMOUNT_VALUE">Brak kwoty</string>
+    <string name="MS_NO_DATA_VALUE">Brak daty</string>
+    <string name="MS_NO_ACCOUNT_VALUE">Brak konta</string>
+    <string name="MS_NO_TYPE_VALUE">Brak typu</string>
+    <string name="MS_SQLiteException">Problem bazy danych</string>
+
+    <!--Errors-->
+    <string name="ERR_JSON_PARSER_EXCEPTION">Problem z wygenerowaniem Json</string>
+    <string name="ERR_REST_ERROR">Problem z serwisem Rest</string>
+
+    <string-array name="wallet_types">
+        <item>Bank</item>
+        <item>Świnka</item>
+        <item>Anita</item>
+        <item>Sodexo</item>
+        <item>Pizza</item>
+        <item>Artykuły spożywcze</item>
+        <item>Piwo</item>
+        <item>Rozrywka, kultura</item>
+        <item>Prezenty</item>
+        <item>Poszukiwanie</item>
+        <item>Wynagrodzenie, przychód</item>
+        <item>Jedzenie poza domem</item>
+        <item>Paliwo</item>
+        <item>Transport</item>
+        <item>Telefon, internet</item>
+        <item>Sport</item>
+        <item>Czynsz</item>
+        <item>Wakacje</item>
+        <item>Inne</item>
+        <item>Administracja</item>
+        <item>Środki czystości</item>
+        <item>Doskonalenie</item>
+        <item>Zaklady</item>
+        <item>Podatek</item>
+        <item>Med</item>
+    </string-array>
+
+    <string-array name="wallet_accounts">
+        <item>Moje konto</item>
+        <item>Lokata</item>
+        <item>Euro</item>
+        <item>Świnka</item>
+    </string-array>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_bill">BillActivity</string>
+</resources>

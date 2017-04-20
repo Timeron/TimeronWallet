@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_wallet_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.timeron.timeronwallet.WalletMainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGreyDark"
+        android:weightSum="200"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGreyDarkLight">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/button6"
+                android:drawableStart="@android:drawable/ic_menu_close_clear_cancel"
+                android:background="@android:drawable/dialog_holo_dark_frame"
+                android:textColor="@android:color/background_light"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:onClick="onClickClose" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/button4"
+                android:drawableEnd="@android:drawable/ic_menu_send"
+                android:background="@android:drawable/dialog_holo_dark_frame"
+                android:textColor="@android:color/background_light"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:onClick="onClickSave" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:background="@color/colorGreyDarkLight">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:text="@string/wallet_operation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/wmDescOperation"
+                    android:gravity="center_horizontal"
+                    android:textColor="@android:color/background_light" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/wmExpenditureIncome">
+
+                    <Switch
+                        android:text="@string/wallet_income"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/wmIncome_switch"
+                        android:paddingEnd="16dp"
+                        android:paddingStart="16dp"
+                        android:textColor="@android:color/background_light"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColorLink="?android:attr/textColorLinkInverse"
+                        android:onClick="onClickIncome" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:text="@string/wallet_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/wmDecsDate"
+                    android:textColor="@android:color/background_light"
+                    android:gravity="center_horizontal" />
+
+                <TextView
+                    android:text="@string/date0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/wmDate"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/background_light"
+                    android:drawablePadding="10dp"
+                    android:drawableEnd="@android:drawable/ic_menu_today"
+                    android:gravity="center_vertical|end"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:shadowColor="@android:color/background_dark"
+                    android:shadowDx="@android:integer/config_shortAnimTime"
+                    android:shadowDy="6"
+                    android:onClick="onClickDate" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:text="@string/wallet_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wmDescAccount"
+            android:layout_weight="1"
+            android:textColor="@android:color/background_light"
+            android:gravity="center_horizontal"
+            android:paddingTop="20dp" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wmAccount_spinner"
+            android:layout_weight="1"
+            android:layout_marginEnd="0dp"
+            android:layout_marginStart="16dp" />
+
+        <TextView
+            android:text="@string/wallet_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wmDescAmount"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/background_light" />
+
+        <TextView
+            android:text="@string/amount0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wmAmount"
+            android:layout_weight="10"
+            android:textSize="36sp"
+            android:textColor="@android:color/background_light"
+            android:gravity="center_vertical|end"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:textStyle="bold"
+            android:onClick="onClickAmount" />
+
+        <TextView
+            android:text="@string/wallet_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wmDescType"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/background_light" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wmType_spinner"
+            android:layout_weight="1"
+            android:entries="@array/wallet_types"
+            android:textAlignment="textEnd"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="0dp"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/wmDesc_bill"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:text="@string/wallet_bill"
+            android:textColor="@android:color/background_light" />
+
+        <Button
+            android:text="@string/wallet_plus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wmBill_button"
+            android:background="@android:drawable/progress_horizontal"
+            android:minHeight="4dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:onClick="onClickAddBill" />
+
+        <ListView
+            android:id="@+id/wmBillListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="horizontal" />
+
+        <!--<LinearLayout-->
+            <!--android:orientation="vertical"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:id="@+id/wmBillLayout">-->
+
+        <!--</LinearLayout>-->
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_wallet_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.timeron.timeronwallet.BillActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGreyDark"
+        android:weightSum="200"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGreyDarkLight"
+            android:orientation="horizontal"
+            android:paddingBottom="50dp">
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:drawable/dialog_holo_dark_frame"
+                android:drawableStart="@android:drawable/ic_menu_close_clear_cancel"
+                android:onClick="onClickClose"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:textColor="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:drawable/dialog_holo_dark_frame"
+                android:drawableEnd="@android:drawable/ic_menu_send"
+                android:onClick="onClickBillSend"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:textColor="@android:color/background_light" />
+        </LinearLayout>
+
+        <TextView
+            android:text="@string/wallet_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wmDescAmount"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/background_light" />
+
+        <TextView
+            android:text="@string/amount0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wmAmount"
+            android:layout_weight="10"
+            android:textSize="36sp"
+            android:textColor="@android:color/background_light"
+            android:gravity="center_vertical|end"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:textStyle="bold"
+            android:onClick="onClickAmount" />
+
+        <TextView
+            android:id="@+id/wmDescType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:paddingTop="50dp"
+            android:text="@string/wallet_type"
+            android:textColor="@android:color/background_light" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wmType_spinner"
+            android:layout_weight="1"
+            android:entries="@array/wallet_types"
+            android:textAlignment="textEnd"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="0dp"
+            android:textSize="18sp"/>
+
+
+
+    </LinearLayout>
+</RelativeLayout>

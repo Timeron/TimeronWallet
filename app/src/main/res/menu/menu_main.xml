@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Rekordy"
+        android:onClick="OnClickOpenRecords"/>
+    <item
+        android:title="Dostępność Serwera"
+        android:onClick="OnClickAvailability"/>
+    <item
+        android:title="Synchronizuj"
+        android:onClick="OnClickSync"/>
+</menu>
