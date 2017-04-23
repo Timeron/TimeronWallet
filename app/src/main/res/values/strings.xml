@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Wallet</string>
 
+    <string name="version">v:1.0.1</string>
+    <string name="versionDate">2017-04-23</string>
+
     <string name="save">Zapisz</string>
     <string name="cancle">Anuluj</string>
     <string name="amount0">0.00 zł</string>

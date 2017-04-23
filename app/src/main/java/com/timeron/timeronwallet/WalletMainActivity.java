@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -18,6 +19,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.timeron.timeronwallet.actitityModule.ApplicationInfoActivity;
 import com.timeron.timeronwallet.calculator.match.CalculatorMath;
 import com.timeron.timeronwallet.constant.Account;
 import com.timeron.timeronwallet.constant.Type;
@@ -260,6 +262,11 @@ public class WalletMainActivity extends AppCompatActivity {
      */
     public void OnClickSync(MenuItem item) {
         walletService.syncRecords();
+    }
+
+    public void OnClickAppInfo(MenuItem item){
+        Intent intent = new Intent(this, ApplicationInfoActivity.class);
+        startActivity(intent);
     }
 
     public void OnClickAvailability(MenuItem item) {

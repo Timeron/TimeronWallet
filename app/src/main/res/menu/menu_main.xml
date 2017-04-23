@@ -11,4 +11,7 @@
     <item
         android:title="Synchronizuj"
         android:onClick="OnClickSync"/>
+    <item
+        android:title="Info"
+        android:onClick="OnClickAppInfo"/>
 </menu>

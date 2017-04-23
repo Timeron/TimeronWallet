@@ -30,8 +30,10 @@ import java.util.List;
 
 public class RestService {
 
-//    private static final String SERVER = "http://timeron.ddns.net:8080/nexus/v1/walletAndroid/";
-    private static final String SERVER = "http://192.168.1.224:8080/nexus/v1/walletAndroid/";
+    //Prod
+    private static final String SERVER = "http://timeron.ddns.net:8080/nexus/v1/walletAndroid/";
+    //Test
+//    private static final String SERVER = "http://192.168.1.224:8080/nexus/v1/walletAndroid/";
     private Context context;
     RequestQueue queue;
 
