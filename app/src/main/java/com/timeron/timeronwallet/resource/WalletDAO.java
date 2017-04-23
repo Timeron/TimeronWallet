@@ -19,6 +19,9 @@ import com.timeron.timeronwallet.util.ResultImpl;
 
 public class WalletDAO extends WalletDatabadeHelper{
 
+    private final static String ORDER_ASC = " ASC";
+    private final static String ORDER_DESC = " DESC";
+
     public WalletDAO(Context context) {
         super(context);
     }
@@ -64,7 +67,7 @@ public class WalletDAO extends WalletDatabadeHelper{
         Cursor cursor = null;
         try {
             SQLiteDatabase db = getWritableDatabase();
-            cursor = db.query(WALLET_RECORD_TABLE, new String[]{"*"}, null, null, null, null, "_id"+" ASC");
+            cursor = db.query(WALLET_RECORD_TABLE, new String[]{"*"}, null, null, null, null, DATE+ORDER_DESC);
             if(cursor.moveToFirst()){
                 Toast toast = Toast.makeText(context, cursor.getString(1), Toast.LENGTH_LONG);
                 toast.show();
@@ -78,7 +81,7 @@ public class WalletDAO extends WalletDatabadeHelper{
 
     public void removeRecord(Long record) {
         SQLiteDatabase db = getWritableDatabase();
-        db.delete(WALLET_RECORD_TABLE, "_id = ?", new String[]{record.toString()});
+        db.delete(WALLET_RECORD_TABLE, ID+" = ?", new String[]{record.toString()});
         db.close();
     }
 
@@ -86,7 +89,7 @@ public class WalletDAO extends WalletDatabadeHelper{
         Cursor cursor = null;
         try {
             SQLiteDatabase db = getWritableDatabase();
-            cursor = db.query(WALLET_RECORD_TABLE, new String[]{"*"}, WalletDAO.SYNC+" = ?", new String[]{"0"}, null, null, "_id"+" ASC");
+            cursor = db.query(WALLET_RECORD_TABLE, new String[]{"*"}, WalletDAO.SYNC+" = ?", new String[]{"0"}, null, null, ID+ORDER_ASC);
             cursor.moveToFirst();
             db.close();
         }catch (SQLiteException ex){
@@ -101,7 +104,7 @@ public class WalletDAO extends WalletDatabadeHelper{
         if(resultDto.isSuccess()) {
             try {
                 SQLiteDatabase db = getWritableDatabase();
-                String condition = "_id = ?";
+                String condition = ID+" = ?";
                 db.update(WALLET_RECORD_TABLE, walletRecord.getContenValue(), condition, new String[]{Integer.toString(walletRecord.getId())});
                 resultDto.addMessage(R.string.MS_RECORD_ADDED);
                 db.close();
