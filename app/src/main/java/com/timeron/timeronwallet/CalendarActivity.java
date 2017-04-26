@@ -12,6 +12,8 @@ import android.widget.DatePicker;
 import com.timeron.timeronwallet.constant.CalculatorButton;
 import com.timeron.timeronwallet.exception.WalletValidationException;
 
+import org.joda.time.DateTime;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -24,17 +26,25 @@ public class CalendarActivity extends AppCompatActivity {
 
     DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 
+    DatePicker datePicker;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
-        String startDate = getIntent().getStringExtra(this.DATE_PICKER);
+        datePicker = (DatePicker) findViewById(R.id.datePicker);
+
+        DateTime startDate = new DateTime(getIntent().getLongExtra(this.DATE_PICKER, 0L));
+        int year = startDate.getYear();
+        int month = startDate.getMonthOfYear()-1;
+        int day = startDate.getDayOfMonth();
+        datePicker.updateDate(year, month, day);
 
     }
 
     public void onClickSend(View view) {
-        DatePicker datePicker = (DatePicker) findViewById(R.id.datePicker);
+
         Date date = getDateFromDatePicker(datePicker);
         Intent intent = new Intent();
         intent.putExtra(DATE_PICKER, date.getTime());

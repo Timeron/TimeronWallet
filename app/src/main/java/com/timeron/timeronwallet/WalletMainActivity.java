@@ -127,7 +127,6 @@ public class WalletMainActivity extends AppCompatActivity {
         }
     }
 
-
     public void onClickAmount(View view) {
         Log.i("Log", "onClickAmount");
         Intent calculatorIntent = new Intent(this, CalculatorActivity.class);
@@ -139,6 +138,7 @@ public class WalletMainActivity extends AppCompatActivity {
     public void onClickDate(View view) {
         Log.i("Log", "onClickDate");
         Intent calendarIntent = new Intent(this, CalendarActivity.class);
+        calendarIntent.putExtra(CalendarActivity.DATE_PICKER, this.record.getDate().getTime());
         startActivityForResult(calendarIntent, REQUEST_CLICK_DATE);
     }
 
@@ -148,6 +148,7 @@ public class WalletMainActivity extends AppCompatActivity {
     }
 
     public void onClickSave(View view) {
+        Date tempDate = this.record.getDate();
         this.record.setAccount(spinnerAccount.getSelectedItem().toString());
         this.record.setType(spinnerType.getSelectedItem().toString());
         if(!this.record.getAmount().equals(CalculatorMath.round(new BigDecimal(0)))) {
@@ -163,6 +164,8 @@ public class WalletMainActivity extends AppCompatActivity {
             saveRecordAsyncTask.execute(this.record);
 
             cleanView();
+            this.record.setDate(tempDate);
+            dateTextTV.setText(dateFormat.format(this.record.getDate()));
         }else{
             Toast toast = Toast.makeText(this, R.string.MS_NO_AMOUNT_VALUE, Toast.LENGTH_SHORT);
             toast.show();
